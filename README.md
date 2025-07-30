@@ -13,6 +13,8 @@ A modern, accessible, and responsive FAQ accordion component built with React. F
 
 ##  Demo
 
+> **[Live Demo](https://interactive-ui-accordion.vercel.app/)**
+
 The accordion displays FAQ items with:
 - Expandable/collapsible question panels
 - Multiple items can be open simultaneously
