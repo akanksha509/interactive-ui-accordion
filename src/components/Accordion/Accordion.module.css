@@ -1,0 +1,267 @@
+/* CSS Custom Properties for Theming */
+:root {
+  --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-hover: #f3f4f6;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --accent-color: #8B5CF6;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Spacing & Layout */
+  --container-max-width: 1200px;
+  --container-padding: 24px;
+  --item-padding: 20px;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --bg-hover: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --accent-color: #60A5FA;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Container Styles */
+.accordionContainer {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* Header Styles */
+.accordionHeader {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--accent-color);
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+/* Accordion Wrapper */
+.accordionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+}
+
+/* Accordion Item Styles */
+.accordionItem {
+  background-color: var(--bg-primary);
+  transition: all var(--transition-speed) ease;
+}
+
+.accordionItem:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.accordionItem:last-child {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+/* Accordion Button Styles */
+.accordionButton {
+  width: 100%;
+  padding: var(--item-padding);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.accordionButton:hover {
+  background-color: var(--bg-hover);
+}
+
+.accordionButton:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+  background-color: var(--bg-hover);
+}
+
+.accordionButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.accordionButton:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+}
+
+/* Question Text */
+.questionText {
+  flex: 1;
+  padding-right: 16px;
+  line-height: 1.5;
+}
+
+/* Accordion Icon */
+.accordionIcon {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  transition: transform var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.accordionIcon.iconOpen {
+  transform: rotate(180deg);
+}
+
+/* Accordion Content */
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease;
+}
+
+.accordionAnswer {
+  padding: 0 var(--item-padding) var(--item-padding);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.accordionAnswer p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Open State */
+.accordionItem.open {
+  background-color: var(--bg-secondary);
+}
+
+.accordionItem.open .accordionButton {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .accordionContainer {
+    padding: 16px;
+  }
+  
+  .accordionHeader {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  
+  .accordionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .accordionButton {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+  
+  .questionText {
+    padding-right: 12px;
+  }
+  
+  .accordionAnswer {
+    padding: 0 16px 16px;
+  }
+  
+  .accordionAnswer p {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordionContainer {
+    padding: 12px;
+  }
+  
+  .accordionTitle {
+    font-size: 1.25rem;
+  }
+  
+  .accordionButton {
+    padding: 14px;
+    font-size: 0.875rem;
+  }
+  
+  .accordionAnswer {
+    padding: 0 14px 14px;
+  }
+}
+
+/* Animation Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .accordionButton,
+  .accordionIcon,
+  .accordionContent,
+  .accordionItem {
+    transition: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .accordionButton:focus {
+    outline: 3px solid currentColor;
+  }
+  
+  .accordionIcon {
+    font-weight: 700;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .accordionContent {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .accordionIcon {
+    display: none;
+  }
+}
