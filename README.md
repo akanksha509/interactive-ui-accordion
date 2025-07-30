@@ -2,7 +2,7 @@
 
 A modern, accessible, and responsive FAQ accordion component built with React. Features light/dark theme switching, smooth animations, and full keyboard navigation support.
 
-## 🚀 Features
+##  Features
 
 - **Responsive Design**: Mobile-first approach with breakpoints for tablet and desktop
 - **Theme Switching**: Light and dark theme support with localStorage persistence
@@ -11,7 +11,7 @@ A modern, accessible, and responsive FAQ accordion component built with React. F
 - **Modern Stack**: Built with React 18 and CSS Modules
 - **Performance Optimized**: Efficient re-renders and lightweight bundle size
 
-## 📱 Demo
+##  Demo
 
 The accordion displays FAQ items with:
 - Expandable/collapsible question panels
@@ -40,7 +40,7 @@ npm start
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 src/
@@ -104,24 +104,5 @@ The layout adapts with:
 - Touch-friendly button sizes
 - Optimized content density
 
-##  Testing
 
-Run the test suite:
 
-```bash
-npm test
-```
-
-Available test commands:
-- `npm test`: Run tests in watch mode
-- `npm run test:coverage`: Run tests with coverage report
-
-##  Building for Production
-
-Create an optimized production build:
-
-```bash
-npm run build
-```
-
-The build folder will contain the optimized files ready for deployment.
